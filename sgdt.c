@@ -20,28 +20,33 @@ typedef void (*settr)(struct tr*);
 static int streq(const char* a, const char* b)
 {
 	size_t i = 0;
-	while (a[i] == b[i] && a[i]) {
+
+	while (a[i] == b[i] && a[i])
 		i++;
-	}
+
 	return b[i] == a[i];
 }
 
-static void get_gdt(struct tr* tr) {
+static void get_gdt(struct tr* tr)
+{
 	__asm__ __volatile__("sgdt %0\n\t"
 			     : : "m" (*tr));
 }
 
-static void get_ldt(struct tr* tr) {
+static void get_ldt(struct tr* tr)
+{
 	__asm__ __volatile__("lldt %0\n\t"
 			     : : "m" (*tr));
 }
 
-static void get_idt(struct tr* tr) {
+static void get_idt(struct tr* tr)
+{
 	__asm__ __volatile__("lidt %0\n\t"
 			     : : "m" (*tr));
 }
 
-static void get_tr(struct tr* tr) {
+static void get_tr(struct tr* tr)
+{
 	__asm__ __volatile__("ltr %0\n\t"
 			     : : "m" (*tr));
 }
@@ -56,29 +61,33 @@ static struct {
 	{ "tr", get_tr },
 };
 
-static void print_tr(settr settr) {
+static void print_tr(settr settr)
+{
 	struct tr tr = {0, 0};
+
 	settr(&tr);
 
-	printf("base: %p\nlimit: %p\n", tr.base, tr.limit);
-
+	printf("base: %x\nlimit: %x\n", tr.base, tr.limit);
 }
 
-int main(int argc, char** argv) {
-	if (argc <= 1) {
-		for (size_t i = 0; i < ARRSZE(funclist); i++) {
-			printf("%s:\n", funclist[i].name);
-			print_tr(funclist[i].settr);
-		}
-	} else {
-		for (size_t i = 0; i < argc; i++) {
-			for (size_t j = 0; j < ARRSZE(funclist); j++) {
-				if (streq(funclist[j].name, argv[i])) {
-					printf("%s:\n", funclist[j].name);
-					print_tr(funclist[j].settr);
-					break;
-				}
-			}
+int main(int argc, char** argv)
+{
+	argv++;
+	argc--;
+
+	if (argc <= 0) {
+		argc = 1;
+		argv[0] = "gdt";
+	}
+
+	for (int i = 0; i < argc; i++) {
+		for (size_t j = 0; j < ARRSZE(funclist); j++) {
+			if (!streq(funclist[j].name, argv[i]))
+				continue;
+
+			printf("%s:\n", funclist[j].name);
+			print_tr(funclist[j].settr);
+			break;
 		}
 	}
 }
