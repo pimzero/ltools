@@ -12,7 +12,7 @@
 
 struct tr {
 	uint16_t limit;
-	uint32_t base;
+	void* base;
 } __packed;
 
 typedef void (*settr)(struct tr*);
@@ -67,7 +67,7 @@ static void print_tr(settr settr)
 
 	settr(&tr);
 
-	printf("base: %x\nlimit: %x\n", tr.base, tr.limit);
+	printf("base: %p\nlimit: %x\n", tr.base, tr.limit);
 }
 
 int main(int argc, char** argv)
