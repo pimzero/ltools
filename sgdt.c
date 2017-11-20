@@ -35,19 +35,19 @@ static void get_gdt(struct tr* tr)
 
 static void get_ldt(struct tr* tr)
 {
-	__asm__ __volatile__("lldt %0\n\t"
+	__asm__ __volatile__("sldt %0\n\t"
 			     : : "m" (*tr));
 }
 
 static void get_idt(struct tr* tr)
 {
-	__asm__ __volatile__("lidt %0\n\t"
+	__asm__ __volatile__("sidt %0\n\t"
 			     : : "m" (*tr));
 }
 
 static void get_tr(struct tr* tr)
 {
-	__asm__ __volatile__("ltr %0\n\t"
+	__asm__ __volatile__("str %0\n\t"
 			     : : "m" (*tr));
 }
 
