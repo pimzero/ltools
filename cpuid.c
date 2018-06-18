@@ -82,6 +82,36 @@ default_opt:
 			W(EAX), B(EBX, 0), B(EBX, 1), B(EBX, 2), B(EBX, 3),
 			W(ECX), W(EDX));
 			break;
+		case 0xA:
+			printf(
+			"Version ID of architectural performance monitoring: " H8 "\n"
+			"General-purpose performance monitoring counter per logical processor: " H8 "\n"
+			"Bit width of general-purpose, performance monitoring counter: " H8 "\n"
+			"Length of EBX bit vector to enumerate architectural performance monitoring events: " H8 "\n"
+			, B(EAX, 0), B(EAX, 1), B(EAX, 2), B(EAX, 3));
+			char* ebx_str[] = {
+				"Core cycle",
+				"Instruction retired",
+				"Reference cycles",
+				"Last-level cache reference",
+				"Last-level cache misses",
+				"Branch instruction retired",
+				"Branch mispredict retired",
+			};
+			for (size_t i = 0; i < B(EAX, 3) && i < 32; i++) {
+				if (i < arr_sze(ebx_str))
+					printf("%s", ebx_str[i]);
+				else
+					printf("%zu", i);
+				printf(" event%s available\n",
+				       ((1<<i) & W(EBX)) ? " NOT" : "");
+			}
+			if (B(EAX, 0) > 1)
+				printf("Number of fixed-function performance counters: %d\n"
+				       "Bit width of fixed-function performance counters: %d\n",
+				       B(EDX, 0) & 0xf, B(EDX, 0) & 0xf);
+			printf("AnyThread deprecation: %d\n", !!(W(EBX) & (1<<15)));
+			break;
 		case 0x80000002:
 		case 0x80000003:
 		case 0x80000004:
