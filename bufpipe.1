@@ -1,0 +1,21 @@
+.TH bufpipe 1 2018-01-12
+.SH NAME
+bufpipe \- buffer stdin
+.SH SYNOPSIS
+.BR bufpipe " \fIcommand\fP [\fIargs\fP]"
+.SH DESCRIPTION
+.B bufpipe
+read its standard input and write it to a temporary file. This
+temporary file is a regular file and it becomes the standard input
+for \fIcommand\fP. This allows to pipe to command that only read via
+mmap. An example of its use is the following:
+.PP
+.in +2n
+.EX
+$ \fBgcc bufpipe.c -o/dev/stdout | bufpipe readelf -h /dev/stdin\fP
+  Entry point address:               0x10f0
+  Start of program headers:          64 (bytes into file)
+  [...]
+.EE
+.in
+.PP
