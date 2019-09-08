@@ -1,0 +1,20 @@
+.TH coredump_filter 1 2019-01-26
+.SH NAME
+coredump_filter \- pretty print the content of /proc/pid/coredump_filter
+.SH SYNOPSIS
+.BR coredump_filter " [\fI-s BITSET\fP] " \fIpid\fP
+.SH DESCRIPTION
+Read the coredump_filter file for the given \fIpid\fP, or stdin if no \fIpid\fP
+is given. If \fI-s\fP flag is set, write the \fIBITSET\fP to the \fIpid\fP
+coredump_filter file.
+.PP
+.in +2n
+.EX
+$ \fB./coredump_filter $$\fP
+ANON_PRIVATE|ANON_SHARED|ELF_HEADERS|HUGETLB_PRIVATE
+$ \fB./coredump_filter -s '' $$\fP
+$ \fB./coredump_filter $$\fP
+$ \fBkill -ABRT $$
+.EE
+.in
+.PP
