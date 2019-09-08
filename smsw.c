@@ -1,14 +1,14 @@
 #include <stdio.h>
+#include <stdint.h>
 
-typedef short cr;
+__asm__(".global smsw\n"
+"smsw:\n\t"
+"smsw %ax\n\t"
+"ret\n\t");
 
-static void smws(cr* cr0)
-{
-	__asm__ __volatile__("smsw %0\n\t"
-			     : : "m" (*cr0));
-}
+extern uint16_t smsw(void);
 
-static void print_cr0(cr cr0)
+static void print_cr0(uint16_t cr0)
 {
 	printf("CR0:");
 #define X(Bit, Name) do { if (cr0 & (1 << (Bit))) printf(" " #Name); } while (0)
@@ -24,7 +24,5 @@ static void print_cr0(cr cr0)
 
 int main()
 {
-	cr cr0 = 0;
-	smws(&cr0);
-	print_cr0(cr0);
+	print_cr0(smsw());
 }
