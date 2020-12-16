@@ -1,10 +1,10 @@
 CFLAGS=-std=c99 -Wall -Wextra -O2
-
-all: \
+all:\
 	bufpipe \
 	coredump_filter \
 	cpuid \
 	dumpauxv \
+	fxsave \
 	mmapable \
 	rdrand \
 	readcmos \
@@ -15,5 +15,4 @@ all: \
 	writeio \
 	xgetbv
 
-coredump_filter: CPPFLAGS=-D_POSIX_C_SOURCE=2
 coredump_filter:
