@@ -1,10 +1,11 @@
-CFLAGS=-std=c99 -Wall -Wextra -O2
-all:\
+CFLAGS=-std=c99 -Wall -Wextra -Wwrite-strings -ggdb
+OUT= \
 	bufpipe \
 	coredump_filter \
 	cpuid \
 	dumpauxv \
 	fxsave \
+	lsholes \
 	mmapable \
 	rdrand \
 	readcmos \
@@ -13,6 +14,11 @@ all:\
 	sgdt \
 	smsw \
 	writeio \
-	xgetbv
+	xgetbv \
 
-coredump_filter:
+all: $(OUT)
+
+clean:
+	$(RM) $(OUT)
+
+.PHONY: clean
