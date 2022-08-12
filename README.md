@@ -14,6 +14,7 @@ Those tools are mainly linux/x86 oriented.
  - `cpuid`: pretty print information from the `cpuid` instruction
  - `dumpauxv`: pretty print a auxv file
  - `lsholes`: show holes/data in sparse files
+ - `get_ss`: print segment seletors
  - `mmapable`: tell if a file supports the mmap file operation
  - `rdrand`: print random numbers generated with the `rdrand` instruction
  - `readcmos`: read the CMOS clock register

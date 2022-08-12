@@ -7,6 +7,7 @@ OUT= \
 	dumpauxv \
 	fxsave \
 	get_ldt \
+	get_ss \
 	lsholes \
 	mmapable \
 	rdrand \
