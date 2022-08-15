@@ -11,6 +11,7 @@ OUT= \
 	hpet \
 	lsholes \
 	mem_cat \
+	memfd_secret \
 	mmapable \
 	rdrand \
 	rdtsc \

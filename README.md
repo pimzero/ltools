@@ -17,6 +17,7 @@ Those tools are mainly linux/x86 oriented.
  - `get_ss`: print segment seletors
  - `hpet`: get info about local hpet
  - `mem_cat`: dump memory of another process
+ - `memfd_secret`: open a `memfd_secret` fd for the provided command
  - `mmapable`: tell if a file supports the mmap file operation
  - `rdrand`: print random numbers generated with the `rdrand` instruction
  - `readcmos`: read the CMOS clock register
