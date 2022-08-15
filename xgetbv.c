@@ -2,15 +2,14 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
-int main(int argc, char** argv)
+int main(int argc, const char** argv)
 {
 	uint32_t eax;
 	uint32_t edx;
 	uint32_t ecx = 0;
 
-	char* noargs[] = {
+	const char* noargs[] = {
 		"0",
 		NULL,
 	};
