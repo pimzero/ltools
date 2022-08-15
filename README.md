@@ -14,6 +14,7 @@ Those tools are mainly linux/x86 oriented.
  - `coredump_filter`: get/set `coredump_filter` flags
  - `cpuid`: pretty print information from the `cpuid` instruction
  - `dumpauxv`: pretty print a auxv file
+ - `dumpvdso`: dump vDSO
  - `lsholes`: show holes/data in sparse files
  - `get_ss`: print segment selectors
  - `getpid`: print self or parent pid

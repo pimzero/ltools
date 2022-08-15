@@ -5,6 +5,7 @@ OUT= \
 	coredump_filter \
 	cpuid \
 	dumpauxv \
+	dumpvdso \
 	fxsave \
 	get_ldt \
 	get_ss \
