@@ -16,6 +16,7 @@ Those tools are mainly linux/x86 oriented.
  - `lsholes`: show holes/data in sparse files
  - `get_ss`: print segment seletors
  - `hpet`: get info about local hpet
+ - `mem_cat`: dump memory of another process
  - `mmapable`: tell if a file supports the mmap file operation
  - `rdrand`: print random numbers generated with the `rdrand` instruction
  - `readcmos`: read the CMOS clock register

@@ -10,6 +10,7 @@ OUT= \
 	get_ss \
 	hpet \
 	lsholes \
+	mem_cat \
 	mmapable \
 	rdrand \
 	rdtsc \
