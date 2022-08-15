@@ -1,7 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 
 #define arr_sze(X) (sizeof(X) / sizeof(*(X)))
 
@@ -89,7 +88,7 @@ default_opt:
 			"Bit width of general-purpose, performance monitoring counter: " H8 "\n"
 			"Length of EBX bit vector to enumerate architectural performance monitoring events: " H8 "\n"
 			, B(EAX, 0), B(EAX, 1), B(EAX, 2), B(EAX, 3));
-			char* ebx_str[] = {
+			const char* ebx_str[] = {
 				"Core cycle",
 				"Instruction retired",
 				"Reference cycles",
