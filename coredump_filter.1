@@ -2,7 +2,9 @@
 .SH NAME
 coredump_filter \- pretty print the content of /proc/pid/coredump_filter
 .SH SYNOPSIS
-.BR coredump_filter " [\fI-s BITSET\fP] " \fIpid\fP
+.BR coredump_filter " [\fI-s BITSET\fP] " " \fI-p pid\fP "
+
+.BR coredump_filter " \fI-s BITSET\fP " " \fI-- commandline\fP "
 .SH DESCRIPTION
 Read the coredump_filter file for the given \fIpid\fP, or stdin if no \fIpid\fP
 is given. If \fI-s\fP flag is set, write the \fIBITSET\fP to the \fIpid\fP
@@ -10,10 +12,15 @@ coredump_filter file.
 .PP
 .in +2n
 .EX
-$ \fB./coredump_filter $$\fP
+$ \fB./coredump_filter -p $$\fP
 ANON_PRIVATE|ANON_SHARED|ELF_HEADERS|HUGETLB_PRIVATE
-$ \fB./coredump_filter -s '' $$\fP
-$ \fB./coredump_filter $$\fP
+$ \fB./coredump_filter -s 'ANON_PRIVATE|ANON_SHARED' -p $$\fP
+$ \fB./coredump_filter -p $$\fP
+ANON_PRIVATE|ANON_SHARED
+$ \fB./coredump_filter -p - < /proc/self/coredump_filter\fP
+ANON_PRIVATE|ANON_SHARED
+$ \fB./coredump_filter -s 0x1ff -- cat /proc/self/coredump_filter\fP
+000001ff
 $ \fBkill -ABRT $$
 .EE
 .in
