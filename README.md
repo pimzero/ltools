@@ -30,6 +30,7 @@ Those tools are mainly linux/x86 oriented.
  - `readcmos`: read the CMOS clock register
  - `readio`/`writeio`: read/write to an io port
  - `segm2linear`: convert an x86 real-mode segmented address to a linear address
+ - `setcpuid`: enable or disable cpuid instruction
  - `set_no_new_privs`: set the `no_new_privs` thread attribute
  - `set_ptracer`: set this process ptracer
  - `sgdt`: get the base and limit of `sgdt`, `sldt`, `sidt`, and `str`
