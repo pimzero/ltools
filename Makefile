@@ -16,6 +16,7 @@ OUT= \
 	mem_cat \
 	memfd_secret \
 	mmapable \
+	parse_segm \
 	rdpid \
 	rdrand \
 	rdtsc \
