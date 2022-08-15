@@ -26,6 +26,7 @@ Those tools are mainly linux/x86 oriented.
  - `parse_segm`: convert x86 segmented address to linear address
  - `rdpid`: read the processor ID with rdpid x86 instruction
  - `rdrand`: print random numbers generated with the `rdrand` instruction
+ - `rdtsc`: print RDTSC
  - `readcmos`: read the CMOS clock register
  - `readio`/`writeio`: read/write to an io port
  - `segm2linear`: convert an x86 real-mode segmented address to a linear address
