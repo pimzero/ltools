@@ -16,6 +16,7 @@ Those tools are mainly linux/x86 oriented.
  - `dumpauxv`: pretty print a auxv file
  - `lsholes`: show holes/data in sparse files
  - `get_ss`: print segment selectors
+ - `getpid32`: print pid and wait
  - `hpet`: get info about local hpet
  - `mem_cat`: dump memory of another process
  - `memfd_secret`: open a `memfd_secret` fd for the provided command

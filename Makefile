@@ -8,6 +8,7 @@ OUT= \
 	fxsave \
 	get_ldt \
 	get_ss \
+	getpid32 \
 	hpet \
 	lsholes \
 	mem_cat \
