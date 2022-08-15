@@ -20,6 +20,7 @@ Those tools are mainly linux/x86 oriented.
  - `mem_cat`: dump memory of another process
  - `memfd_secret`: open a `memfd_secret` fd for the provided command
  - `mmapable`: tell if a file supports the mmap file operation
+ - `rdpid`: read the processor ID with rdpid x86 instruction
  - `rdrand`: print random numbers generated with the `rdrand` instruction
  - `readcmos`: read the CMOS clock register
  - `readio`/`writeio`: read/write to an io port
