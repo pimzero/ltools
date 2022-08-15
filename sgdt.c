@@ -70,7 +70,7 @@ static void print_tr(settr settr)
 	printf("base: %p\nlimit: %x\n", tr.base, tr.limit);
 }
 
-int main(int argc, char** argv)
+int main(int argc, const char** argv)
 {
 	argv++;
 	argc--;
