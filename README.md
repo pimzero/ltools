@@ -34,6 +34,7 @@ Those tools are mainly linux/x86 oriented.
  - `sgdt`: get the base and limit of `sgdt`, `sldt`, `sidt`, and `str`
    instructions
  - `smsw`: pretty print the result of the `smsw` instruction
+ - `statvfs`: get filesystem statistics
  - `udpsend`: send something over UDP
  - `vmcall`: execute vmcall instruction in userland (fails)
  - `x86_int`: execute INT instruction

@@ -27,6 +27,7 @@ OUT= \
 	set_ptracer \
 	sgdt \
 	smsw \
+	statvfs \
 	udpsend \
 	vmcall \
 	writeio \
