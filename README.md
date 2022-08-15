@@ -10,11 +10,12 @@ so here they are.
 Those tools are mainly linux/x86 oriented.
 
  - `bufpipe`: buffer stdin to be used as a regular file
+ - `close_range`: close a range of file descriptors
  - `coredump_filter`: get/set `coredump_filter` flags
  - `cpuid`: pretty print information from the `cpuid` instruction
  - `dumpauxv`: pretty print a auxv file
  - `lsholes`: show holes/data in sparse files
- - `get_ss`: print segment seletors
+ - `get_ss`: print segment selectors
  - `hpet`: get info about local hpet
  - `mem_cat`: dump memory of another process
  - `memfd_secret`: open a `memfd_secret` fd for the provided command
