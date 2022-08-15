@@ -28,6 +28,7 @@ OUT= \
 	sgdt \
 	smsw \
 	udpsend \
+	vmcall \
 	writeio \
 	x86_int \
 	xgetbv \

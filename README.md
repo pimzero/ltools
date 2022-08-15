@@ -35,5 +35,6 @@ Those tools are mainly linux/x86 oriented.
    instructions
  - `smsw`: pretty print the result of the `smsw` instruction
  - `udpsend`: send something over UDP
+ - `vmcall`: execute vmcall instruction in userland (fails)
  - `x86_int`: execute INT instruction
  - `xgetbv`: pretty print the result of the `xgetbv` instruction
