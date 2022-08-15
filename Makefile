@@ -26,6 +26,7 @@ OUT= \
 	seg2linear \
 	set_no_new_privs \
 	set_ptracer \
+	set_tsc \
 	sgdt \
 	smsw \
 	speculation \

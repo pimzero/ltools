@@ -33,6 +33,7 @@ Those tools are mainly linux/x86 oriented.
  - `setcpuid`: enable or disable cpuid instruction
  - `set_no_new_privs`: set the `no_new_privs` thread attribute
  - `set_ptracer`: set this process ptracer
+ - `set_tsc`: cause SIGSEGV when the process tries to read timestamp counter
  - `sgdt`: get the base and limit of `sgdt`, `sldt`, `sidt`, and `str`
    instructions
  - `smsw`: pretty print the result of the `smsw` instruction
