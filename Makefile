@@ -23,6 +23,7 @@ OUT= \
 	set_ptracer \
 	sgdt \
 	smsw \
+	udpsend \
 	writeio \
 	x86_int \
 	xgetbv \
