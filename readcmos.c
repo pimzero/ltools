@@ -3,11 +3,9 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include <unistd.h>
 
-int main(int argc, char** argv) {
+int main(int argc, const char** argv) {
 	(void) argc;
 	int fd = open("/dev/port", O_RDWR);
 	if (fd < 0)
@@ -15,7 +13,7 @@ int main(int argc, char** argv) {
 
 	argv++;
 
-	char* default_args[] = { "0xd", NULL };
+	const char* default_args[] = { "0xd", NULL };
 	if (!*argv)
 		argv = default_args;
 
