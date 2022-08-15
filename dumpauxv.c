@@ -1,10 +1,7 @@
+#include <elf.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
-#include <sys/auxv.h>
-#include <sys/mman.h>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include <unistd.h>
 
 typedef unsigned long ulong;
@@ -105,8 +102,8 @@ iter:
 	return err;
 }
 
-int main(int argc, char** argv) {
-	char *argv_no_args[] = {
+int main(int argc, const char** argv) {
+	const char *argv_no_args[] = {
 		"-",
 		NULL
 	};
