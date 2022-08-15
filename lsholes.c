@@ -125,6 +125,7 @@ static int do_file(const char* path, unsigned int mode) {
 
 	if (close(fd) < 0)
 		err(1, "close");
+
 	return 0;
 }
 
@@ -142,7 +143,6 @@ int main(int argc, char** argv) {
 			mode = opt;
 			break;
 		}
-
 	}
 
 	for (int i = optind; i < argc; i++)
