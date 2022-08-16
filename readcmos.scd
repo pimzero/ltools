@@ -1,0 +1,7 @@
+readcmos(1)
+
+# NAME
+
+# SYNOPSIS
+
+# DESCRIPTION

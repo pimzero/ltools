@@ -1,0 +1,7 @@
+get_ss(1)
+
+# NAME
+
+# SYNOPSIS
+
+# DESCRIPTION

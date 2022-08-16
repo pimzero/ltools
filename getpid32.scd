@@ -1,0 +1,7 @@
+getpid32(1)
+
+# NAME
+
+# SYNOPSIS
+
+# DESCRIPTION

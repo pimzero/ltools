@@ -1,0 +1,7 @@
+rdtsc(1)
+
+# NAME
+
+# SYNOPSIS
+
+# DESCRIPTION

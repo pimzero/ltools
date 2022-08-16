@@ -1,0 +1,7 @@
+seg2linear(1)
+
+# NAME
+
+# SYNOPSIS
+
+# DESCRIPTION

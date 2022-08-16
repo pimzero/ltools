@@ -46,3 +46,8 @@ Those tools are mainly linux/x86 oriented.
  - `writeio`: write to an io port
  - `x86_int`: execute `INT` instruction
  - `xgetbv`: pretty print the result of the `XGETBV` instruction
+
+Dependencies
+------------
+
+ - `scdoc` for documentation

@@ -39,9 +39,20 @@ OUT_WIP = \
 	hpet \
 	mem_cat \
 
-all: $(OUT)
+DOC = $(OUT:=.1)
 
-all-wip: $(OUT) $(OUT_WIP)
+all: all-bin all-doc
+
+all-bin: $(OUT)
+
+all-doc: $(DOC)
+
+wip-bin: $(OUT_WIP)
+
+clean:
+	$(RM) $(OUT) $(OUT_WIP) $(DOC)
+
+# Binaries needing special flags
 
 bufpipe: CPPFLAGS=-D_GNU_SOURCE
 
@@ -49,7 +60,11 @@ coredump_filter: CPPFLAGS=-D_POSIX_C_SOURCE=2
 
 getpid32: CFLAGS+=-m32
 
-clean:
-	$(RM) $(OUT) $(OUT_WIP)
+# Custom rules
 
-.PHONY: clean all
+.scd.1:
+	scdoc <$< >$@
+
+.SUFFIXES: .1 .scd
+
+.PHONY: clean all all-bin all-doc wip-bin
