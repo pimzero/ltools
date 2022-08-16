@@ -5,15 +5,11 @@ OUT= \
 	coredump_filter \
 	cpuid \
 	dumpauxv \
-	dumpvdso \
 	fxsave \
-	get_ldt \
-	get_ss \
 	getpid \
 	getpid32 \
-	hpet \
+	get_ss \
 	lsholes \
-	mem_cat \
 	memfd_secret \
 	mmapable \
 	parse_segm \
@@ -22,8 +18,8 @@ OUT= \
 	rdtsc \
 	readcmos \
 	readio \
-	setcpuid \
 	seg2linear \
+	setcpuid \
 	set_no_new_privs \
 	set_ptracer \
 	set_tsc \
@@ -37,7 +33,15 @@ OUT= \
 	x86_int \
 	xgetbv \
 
+OUT_WIP = \
+	dumpvdso \
+	get_ldt \
+	hpet \
+	mem_cat \
+
 all: $(OUT)
+
+all-wip: $(OUT) $(OUT_WIP)
 
 bufpipe: CPPFLAGS=-D_GNU_SOURCE
 
@@ -46,6 +50,6 @@ coredump_filter: CPPFLAGS=-D_POSIX_C_SOURCE=2
 getpid32: CFLAGS+=-m32
 
 clean:
-	$(RM) $(OUT)
+	$(RM) $(OUT) $(OUT_WIP)
 
-.PHONY: clean
+.PHONY: clean all
