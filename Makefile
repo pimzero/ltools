@@ -60,6 +60,15 @@ coredump_filter: CPPFLAGS=-D_POSIX_C_SOURCE=2
 
 getpid32: CFLAGS+=-m32
 
+# Update README.md with documentation from all tools
+
+README.md: README.fragment.md $(DOC)
+	cat $< >$@
+	for i in $(DOC); do \
+		printf '\n### %s\n\n' $${i%.1} >>$@ && \
+		pandoc -f man -t markdown --shift-heading-level-by=3 <$$i >>$@ ; \
+	done
+
 # Custom rules
 
 .scd.1:
